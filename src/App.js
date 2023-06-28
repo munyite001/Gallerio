@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Gallery from "./components/Gallery";
+import Search from "./components/Search";
+
 
 function App() {
+  const API_KEY = process.env.REACT_APP_API_KEY;
+  const [currentPage, setCurrentPage] = useState(1)
+  const [searchTerm, setSearchTerm] = useState(null)
+  const [ data, setData ] = useState([])
+  const [ apiURL, setAPIURL ] = useState(`https://api.pexels.com/v1/curated?page=${currentPage}&per_page=15`)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search 
+      setSearchTerm={setSearchTerm}
+      />
+      <Gallery 
+      apiKey={API_KEY}
+      setCurrentPage={setCurrentPage}
+      currentPage={currentPage}
+      searchTerm={searchTerm}
+      setAPIURL={setAPIURL}
+      setSearchTerm={setSearchTerm}
+      apiURL={apiURL}
+      data={data}
+      setData={setData}
+      />
     </div>
   );
 }
