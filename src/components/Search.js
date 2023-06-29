@@ -5,7 +5,7 @@ export default function Search(props) {
         <section className="search">
             <img src="../../images/section-bg.jpg" alt="search-background"/>
             <div className="content">
-                <h1> GALLERIO</h1>
+                <h1> Snap Gallery</h1>
                 <p>Search and download any images within seconds</p>
                 <div className="search-box">
                     <i className="fa fa-search"></i>
