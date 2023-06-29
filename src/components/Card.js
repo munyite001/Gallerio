@@ -1,8 +1,13 @@
 import React from "react";
 
 export default function Card(props) {
+
+    function configLightBox() {
+        props.setLightBox({img: props.photo, display: true})
+    }
+
     return (
-    <li className="card">
+    <li className="card" onClick={configLightBox}>
             <img src={props.photo.src.large2x} alt="img"/>
             <div className="details">
                 <div className="photographer">

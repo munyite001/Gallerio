@@ -141,3 +141,77 @@
     cursor: pointer;
     background: #86adcb;
 }
+
+.lightbox {
+   position: fixed;
+   z-index: 5;
+   width: 100%;
+   height: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.65);
+}
+
+.lightbox .wrapper {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   width: 100%;
+   padding: 20px;
+   max-width: 850px;
+   background: #FFF;
+   border-radius: 5px;
+   transform: translate(-50%, -50%);
+}
+
+.wrapper .lightbox-header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.lightbox-header .photographer {
+   color: #333;
+}
+
+.lightbox-header .photographer i {
+   font-size: 1.7rem;
+}
+
+.lightbox-header .photographer span {
+   font-size: 1.2rem;
+}
+
+.lightbox-header .buttons i {
+   height: 40px;
+   width: 40px;
+   font-size: 1.2rem;
+   color: #FFF;
+   background: #86adcb;
+   text-align: center;
+   line-height: 40px;
+   display: inline-block;
+}
+
+.buttons i:last-child {
+   margin-left: 10px;
+   background: #6c757d;
+}
+
+.preview-img {
+   display: flex;
+   margin-top: 25px;
+   justify-content: center;
+}
+
+.wrapper .preview-img .img {
+   max-height: 65vh;
+   max-width: 90vh;
+   display: flex;
+   justify-content: center;
+}
+
+.preview-img .img img {
+   max-width: 100%;
+   height: 100%;
+   object-fit: contain;
+}

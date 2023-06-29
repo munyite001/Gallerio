@@ -22,6 +22,12 @@ export default function Gallery(props) {
         getImages(props.apiURL)
     })
 
+    useEffect(() => {
+        if (props.searchTerm) {
+            props.setAPIURL(`https://api.pexels.com/v1/search?query=${props.searchTerm}&page=1&per_page=15`)
+        }
+    }, [props.searchTerm])
+
     function loadMoreImages() {
         props.setCurrentPage((prev) => {
             return prev + 1
@@ -55,7 +61,7 @@ export default function Gallery(props) {
             <ul className="images">
                 {props.data && props.data.map((photo) => {
                     return (
-                        <Card photo={photo} key={photo.id}/>
+                        <Card photo={photo} key={photo.id} setLightBox={props.setLightBox}/>
                     )
                 })}
             </ul>
