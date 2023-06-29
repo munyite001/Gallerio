@@ -142,6 +142,10 @@
     background: #86adcb;
 }
 
+.gallery .load-more:disabled {
+   background: #666;
+}
+
 .lightbox {
    position: fixed;
    z-index: 5;

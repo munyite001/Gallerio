@@ -16,7 +16,9 @@ export default function LightBox(props) {
                         <span>{props.lightBoxProps.img.photographer}</span>
                     </div>
                     <div class="buttons">
-                        <i class="fa-solid fa-download"></i>
+                        <i class="fa-solid fa-download" onClick={() => {
+                            props.downloadImg(props.lightBoxProps.img.src.large2x)
+                        }}></i>
                         <i class="fa-solid fa-times" onClick={closeLightBox}></i>
                     </div>
                 </div>

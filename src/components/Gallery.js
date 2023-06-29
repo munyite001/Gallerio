@@ -28,6 +28,7 @@ export default function Gallery(props) {
         }
     }, [props.searchTerm])
 
+    
     function loadMoreImages() {
         props.setCurrentPage((prev) => {
             return prev + 1
@@ -61,11 +62,19 @@ export default function Gallery(props) {
             <ul className="images">
                 {props.data && props.data.map((photo) => {
                     return (
-                        <Card photo={photo} key={photo.id} setLightBox={props.setLightBox}/>
+                        <Card 
+                        photo={photo} 
+                        key={photo.id} 
+                        setLightBox={props.setLightBox}
+                        downloadImg={props.downloadImg}
+                        />
                     )
                 })}
             </ul>
-            <button className="load-more" onClick={loadMoreImages}>
+            <button 
+                className="load-more" 
+                onClick={loadMoreImages} 
+                disabled={props.data.length > 0 ? false:true}>
                 {props.data.length > 0 ? "Load More":"Loading . . ."}
             </button>
         </section>

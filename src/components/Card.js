@@ -14,7 +14,9 @@ export default function Card(props) {
                     <i className="fa-solid fa-camera"></i>
                     <span>{props.photo.photographer}</span>
                 </div>
-                <button>
+                <button onClick={() => {
+                    props.downloadImg(props.photo.src.large2x)
+                }}>
                     <i className="fa-solid fa-download"></i>
                 </button>
             </div>
